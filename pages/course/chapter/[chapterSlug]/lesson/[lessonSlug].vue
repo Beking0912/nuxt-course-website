@@ -25,10 +25,12 @@
       :videoId="lesson.videoId"
     />
     <p>{{ lesson.text }}</p>
-    <LessonCompleteButton
-      :model-value="isLessonComplete"
-      @update:model-value="toggleComplete"
-    />
+    <ClientOnly>
+      <LessonCompleteButton
+        :model-value="isLessonComplete"
+        @update:model-value="toggleComplete"
+      />
+    </ClientOnly>
   </div>
 </template>
   
