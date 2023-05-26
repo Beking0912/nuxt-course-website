@@ -1,42 +1,14 @@
-# Nuxt 3 Minimal Starter
+# Nuxt3 CheatSheets
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+## SPA vs SSR
+**Single Page:**
+1. Initial page load is slow
+2. No round trips to server
 
-## Setup
+**Server Side Rendered:**
+1. Very fast start up
+2. Interactions are slow
 
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+**Universal Rendering:**
+1. No round trips to server
+2. Very fast start up

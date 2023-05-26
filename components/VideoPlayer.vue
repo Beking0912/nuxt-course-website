@@ -1,12 +1,3 @@
-<script lang="ts" setup>
-const props = defineProps({
-  videoId: {
-    type: String,
-    required: true,
-  },
-});
-</script>
-
 <template>
   <iframe
     width="560"
@@ -18,5 +9,12 @@ const props = defineProps({
     allowfullscreen
   ></iframe>
 </template>
-
+<script lang="ts" setup>
+const props = defineProps({
+  videoId: {
+    type: String,
+    required: true,
+  },
+});
+</script>
 <style scoped></style>
