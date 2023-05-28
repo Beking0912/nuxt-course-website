@@ -20,15 +20,12 @@
         Download Video
       </NuxtLink>
     </div>
-    <VideoPlayer
-      v-if="lesson.videoId"
-      :videoId="lesson.videoId"
-    />
+    <VideoPlayer v-if="lesson.videoId" :videoId="lesson.videoId" />
     <p>{{ lesson.text }}</p>
     <ClientOnly>
       <LessonCompleteButton
         :model-value="isLessonComplete"
-        @update:model-value="toggleComplete"
+        @update:model-value="throw createError('Could not update');"
       />
     </ClientOnly>
   </div>
@@ -55,7 +52,7 @@ useHead({
   title,
 });
 
-const progress = useLocalStorage('progress', []);
+const progress = useLocalStorage("progress", []);
 
 const isLessonComplete = computed(() => {
   if (!progress.value[chapter.value.number - 1]) {
@@ -70,6 +67,7 @@ const toggleComplete = () => {
   if (!progress.value[chapter.value.number - 1]) {
     progress.value[chapter.value.number - 1] = [];
   }
-  progress.value[chapter.value.number - 1][lesson.value.number - 1] = !isLessonComplete.value;
+  progress.value[chapter.value.number - 1][lesson.value.number - 1] =
+    !isLessonComplete.value;
 };
 </script>
