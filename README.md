@@ -30,3 +30,7 @@
 2. Reusable
 3. Generic
 
+## Why OAuth?
+- Stop sharing user login info
+- Share tokens that represent permission(JWT)
+- Industry standard
